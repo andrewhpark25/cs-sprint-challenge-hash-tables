@@ -4,6 +4,19 @@ def intersection(arrays):
     """
     # Your code here
 
+    cache = dict()
+    result = []
+    
+    for arr in arrays:
+        for n in arr:
+            if n in cache:
+                cache[n] += 1
+                if cache[n] == len(arrays):
+                    result.append(n)
+            else:
+                cache[n] = 1
+
+
     return result
 
 
